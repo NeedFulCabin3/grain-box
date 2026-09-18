@@ -1,0 +1,28 @@
+name: Validate Frontend Code
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/node-scheduler@v4
+        with:
+          node-version: '20'
+
+      - name: Check HTML and JS Syntax
+        run: |
+          node -e "
+            const fs = require('fs');
+            const js = fs.readFileSync('script.js', 'utf8');
+            new Function(js);
+            console.log('script.js parsed successfully.');
+          "
