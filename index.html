@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>grain box</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="wrap">
+    <h1>grain box</h1>
+    <p class="sub">drop a sample in, chop it to bits</p>
+
+    <div class="dropzone" id="dropzone">
+      <input type="file" id="fileInput" accept="audio/*">
+      <span id="dropLabel">click or drag audio file here</span>
+    </div>
+
+    <canvas id="waveform" width="900" height="160"></canvas>
+    <div class="hint">click the waveform to set grain position</div>
+
+    <div class="transport">
+      <button id="playBtn" disabled>play</button>
+      <button id="stopBtn" disabled>stop</button>
+      <span id="statusText">no sample loaded</span>
+    </div>
+
+    <div class="controls">
+
+      <div class="ctrl">
+        <label>grain size <span id="grainSizeVal">80</span> ms</label>
+        <input type="range" id="grainSize" min="10" max="400" value="80">
+      </div>
+
+      <div class="ctrl">
+        <label>density <span id="densityVal">20</span> grains/sec</label>
+        <input type="range" id="density" min="2" max="60" value="20">
+      </div>
+
+      <div class="ctrl">
+        <label>position <span id="positionVal">0.00</span></label>
+        <input type="range" id="position" min="0" max="1" step="0.001" value="0">
+      </div>
+
+      <div class="ctrl">
+        <label>position jitter <span id="spreadVal">0.02</span></label>
+        <input type="range" id="spread" min="0" max="0.5" step="0.005" value="0.02">
+      </div>
+
+      <div class="ctrl">
+        <label>pitch <span id="pitchVal">0</span> st</label>
+        <input type="range" id="pitch" min="-24" max="24" value="0">
+      </div>
+
+      <div class="ctrl">
+        <label>pitch spread <span id="pitchSpreadVal">0</span> st</label>
+        <input type="range" id="pitchSpread" min="0" max="12" step="0.5" value="0">
+      </div>
+
+      <div class="ctrl">
+        <label>grain shape (attack/release) <span id="envVal">30</span>%</label>
+        <input type="range" id="envAmt" min="5" max="50" value="30">
+      </div>
+
+      <div class="ctrl">
+        <label>reverse chance <span id="reverseVal">0</span>%</label>
+        <input type="range" id="reverseChance" min="0" max="100" value="0">
+      </div>
+
+      <div class="ctrl">
+        <label>spray (auto-move position) <span id="sprayVal">0</span></label>
+        <input type="range" id="spray" min="0" max="1" step="0.01" value="0">
+      </div>
+
+      <div class="ctrl">
+        <label>output gain <span id="gainVal">0.8</span></label>
+        <input type="range" id="masterGain" min="0" max="1.5" step="0.05" value="0.8">
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

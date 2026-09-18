@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+ 
+body {
+  background: #14151a;
+  color: #ddd;
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  margin: 0;
+  padding: 30px 20px 60px;
+}
+ 
+.wrap {
+  max-width: 940px;
+  margin: 0 auto;
+}
+ 
+h1 {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: 1px;
+  color: #f4f4f4;
+}
+ 
+.sub {
+  margin: 4px 0 20px;
+  color: #888;
+  font-size: 14px;
+}
+ 
+.dropzone {
+  border: 2px dashed #3a3c46;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 16px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+ 
+.dropzone:hover {
+  border-color: #6c6fff;
+  background: #191b22;
+}
+ 
+.dropzone.dragover {
+  border-color: #6c6fff;
+  background: #1c1f2b;
+}
+ 
+.dropzone input {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+ 
+#dropLabel {
+  color: #999;
+  font-size: 14px;
+}
+ 
+canvas {
+  width: 100%;
+  height: 160px;
+  background: #0d0e12;
+  border: 1px solid #2a2c35;
+  border-radius: 6px;
+  display: block;
+  cursor: crosshair;
+}
+ 
+.hint {
+  font-size: 12px;
+  color: #666;
+  margin: 6px 0 20px;
+}
+ 
+.transport {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+ 
+button {
+  background: #6c6fff;
+  border: none;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+ 
+button:disabled {
+  background: #33343d;
+  color: #666;
+  cursor: not-allowed;
+}
+ 
+button:hover:not(:disabled) {
+  background: #7f82ff;
+}
+ 
+#stopBtn {
+  background: #3a3c46;
+}
+ 
+#stopBtn:hover:not(:disabled) {
+  background: #4a4c58;
+}
+ 
+#statusText {
+  color: #888;
+  font-size: 13px;
+  margin-left: 8px;
+}
+ 
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px 30px;
+}
+ 
+.ctrl {
+  display: flex;
+  flex-direction: column;
+}
+ 
+.ctrl label {
+  font-size: 12px;
+  color: #aaa;
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+ 
+.ctrl label span {
+  color: #6c6fff;
+  font-weight: 600;
+}
+ 
+input[type="range"] {
+  width: 100%;
+  accent-color: #6c6fff;
+}
+ 
