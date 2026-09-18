@@ -1,0 +1,14 @@
+# OS Metadata
+.DS_Store
+Thumbs.db
+
+# Editor Configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local Server Artifacts
+*.log
+.pnpm-debug.log*
+npm-debug.log*
